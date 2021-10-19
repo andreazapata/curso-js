@@ -3,8 +3,6 @@ const flores = [{ id: 1,  producto: "rosa", precio: 10 },
                   {  id: 3,  producto: "tulipan"  , precio: 20},
                   {  id: 4,  producto: "gerbera" , precio: 15}];
 
-const baratos = flores.filter(flores => flores.precio < 50); 
-console.log(baratos);
+let ordenCreciente = flores.sort((a, b) => parseFloat(a.precio) - parseFloat(b.precio));
+console.log(ordenCreciente);
 
-const iva = flores.map(flores => flores.precio = flores.precio*1.16);
-console.log(iva);
