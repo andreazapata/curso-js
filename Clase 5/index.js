@@ -16,18 +16,17 @@ const peonia = new Flor("peonia", "grande", "rosa", 40);
 let escogerFlor = prompt("¿Qué flor te gustaría escoger?");
 
 
-while (escogerFlor != "") 
-{
-    if (escogerFlor === "rosa") { 
-        rosa.decirPrecio();
-        break;
+while (escogerFlor != "ESC") {
+    switch (escogerFlor) {
+        case "rosa": 
+            rosa.decirPrecio();
+            break;
+        case "peonia":
+            peonia.decirPrecio();
+            break;
+        default:
+            alert("Esa flor no la tenemos, escoge otra.");
+            break;
     }
-    else if (escogerFlor === "peonia") {
-        peonia.decirPrecio();
-        break;
-    }
-    else {
-        alert("Esa flor no la tenemos, escoge otra.");
-        escogerFlor = prompt("¿Qué otra flor te gustaría escoger?");
-    }
+    escogerFlor = prompt("¿Qué otra flor te gustaría escoger?");
 }
