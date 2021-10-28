@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 class="title">DOM</h1>
+        <h3>Andrea Zapata</h3>
+        <div id="escogerFlor">
+            <p>Escoge una flor para verificar el precio.</p>
+            <input type="text" id="flor" placeholder="Escoge una flor.">
+            <br>
+            <button id="listo" onclick="precios();">Indicar precio</button>
+            <div id="indicarPrecio"></div>
+        </div>
+        
+        <br><br>
+
+        <div id="escogerCantidad">
+            <p>¿Qué flor te gustaría escoger?</p>
+            <input type="text" id="florFinal" placeholder="Escoge una flor para tu ramo.">
+            <br>
+            <p>¿Cuántas flores quisieras?</p>
+            <input type="text" id="cantidad" placeholder="Escoge una cantidad.">
+            <br>
+            <p>¿Agregar envío? (+$90). Escribe sí o no.</p>
+            <input type="radio" name= "envio" id="envio_si" value="envio_si">
+            <label for="envio_si">Sí</label>
+            <input type="radio" name= "envio" id="envio_no" value="envio_no">
+            <label for="envio_no">No</label>
+            <br>
+            <p>¿Agregar florero? (+$120). Escribe sí o no.</p>
+            <input type="radio" name= "florero" id="florero_si" value="florero_si">
+            <label for="florero_si">Sí</label>
+            <input type="radio" name= "florero" id="florero_no" value="florero_no">
+            <label for="florero_no">No</label>
+            <br>
+            <button id="listo2" onclick="calcularPrecio();">Listo</button>
+            <div id="precioFinal"></div>
+        </div>
+
+        <script src="index.js"></script>
+        
+    </body>
+</html>
