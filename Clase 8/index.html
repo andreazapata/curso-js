@@ -11,9 +11,9 @@
         <h3>Andrea Zapata</h3>
         <div id="escogerFlor">
             <p>Escoge una flor para verificar el precio.</p>
-            <input type="text" id="flor" placeholder="Escoge una flor.">
+            <input type="text" id="flor" placeholder="Escoge una flor." onkeypress="validar(event)">
             <br>
-            <button id="listo" onclick="precios();">Indicar precio</button>
+            <button id="listo">Indicar precio</button>
             <div id="indicarPrecio"></div>
         </div>
         
@@ -38,7 +38,7 @@
             <input type="radio" name= "florero" id="florero_no" value="florero_no">
             <label for="florero_no">No</label>
             <br>
-            <button id="listo2" onclick="calcularPrecio();">Listo</button>
+            <button id="calcular">Listo</button>
             <div id="precioFinal"></div>
         </div>
 

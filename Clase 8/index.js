@@ -16,7 +16,13 @@ const peonia = new Flor("peonia", "grande", "rosa", 40);
 const tulipan = new Flor("tulipan", "mediana", "roja", 20);
 const gerbera = new Flor("gerbera", "chica", "amarilla", 10);
 
+let botonListo = document.getElementById("listo");
+botonListo.addEventListener("click", precios)
 
+function validar(e) {
+    tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla === 13) precios();
+}
 
 function precios() {
     let florEscogida = document.getElementById('flor').value.toLowerCase();
@@ -37,6 +43,10 @@ function precios() {
         alert("Esa flor no la tenemos, escoge otra.");
     }
 };
+
+
+let botonCalcular = document.getElementById("calcular");
+botonCalcular.addEventListener("click", calcularPrecio)
 
 function calcularPrecio() {
     let florFinal = document.getElementById('florFinal').value.toLowerCase();
