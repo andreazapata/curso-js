@@ -7,10 +7,53 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>DOM</h1>
+        <h1 class="title">DOM</h1>
         <h3>Andrea Zapata</h3>
-       
+        <div id="escogerFlor">
+            <p>Escoge una flor para verificar el precio.</p>
+            <input type="text" id="flor" placeholder="Escoge una flor." onkeypress="validar(event)">
+            <br>
+            <button id="listo">Indicar precio</button>
+            <div id="indicarPrecio"></div>
+        </div>
         
+        <br><br>
+
+        <div id="escogerCantidad">
+            <p>¿Qué flor te gustaría escoger?</p>
+            <input type="text" id="florFinal" placeholder="Escoge una flor para tu ramo.">
+            <br>
+            <p>¿Cuántas flores quisieras?</p>
+            <input type="text" id="cantidad" placeholder="Escoge una cantidad.">
+            <br>
+            <p>¿Agregar envío? (+$90). Escribe sí o no.</p>
+            <input type="radio" name= "envio" id="envio_si" value="envio_si">
+            <label for="envio_si">Sí</label>
+            <input type="radio" name= "envio" id="envio_no" value="envio_no">
+            <label for="envio_no">No</label>
+            <br>
+            <p>¿Agregar florero? (+$120). Escribe sí o no.</p>
+            <input type="radio" name= "florero" id="florero_si" value="florero_si">
+            <label for="florero_si">Sí</label>
+            <input type="radio" name= "florero" id="florero_no" value="florero_no">
+            <label for="florero_no">No</label>
+            <br>
+            <button id="calcular">Listo</button>
+            <div id="precioFinal"></div>
+        </div>
+
+        <div>
+            <label for="nombre">Escribe quien lo envía:</label>
+            <input type="text" id="nombre" />
+            <br>
+            <label for="nombre">Escribe para quien es:</label>
+            <input type="text" id="destinatario" />
+            <input type="button" onclick="guardarDatos()" value="Guardar datos" />
+            <p id="datos">Pulsa para confirmar los datos.</p>
+            <input type="button" onclick="recuperarDatos()" value="Confirmar datos" />
+        </div>
+
         <script src="index.js"></script>
+        
     </body>
 </html>

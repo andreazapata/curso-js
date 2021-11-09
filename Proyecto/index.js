@@ -6,7 +6,8 @@ class Flor {
         this.precio = precio;
     }
     decirPrecio() {
-        alert("La flor " + this.nombre + " cuesta $" + this.precio);
+        let indicarPrecio = document.getElementById('indicarPrecio');
+        indicarPrecio.innerHTML = `<p>La flor ${this.nombre} cuesta $${this.precio}.</p>`;
     }
 }
 
@@ -15,58 +16,87 @@ const peonia = new Flor("peonia", "grande", "rosa", 40);
 const tulipan = new Flor("tulipan", "mediana", "roja", 20);
 const gerbera = new Flor("gerbera", "chica", "amarilla", 10);
 
-let escogerFlor = prompt("¿Qué flor te gustaría escoger?").toLowerCase();
+let botonListo = document.getElementById("listo");
+botonListo.addEventListener("click", precios)
 
-while (escogerFlor != "esc") {
-    if (escogerFlor === "rosa") { 
+function validar(e) {
+    tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla === 13) precios();
+}
+
+function precios() {
+    let florEscogida = document.getElementById('flor').value.toLowerCase();
+
+    if (florEscogida === "rosa") { 
         rosa.decirPrecio();
-        break;
     }
-    else if (escogerFlor === "peonia") {
+    else if (florEscogida === "peonia") {
         peonia.decirPrecio();
-        break;
     }
-    else if (escogerFlor === "tulipan") {
+    else if (florEscogida === "tulipan") {
         tulipan.decirPrecio();
-        break;
     }
-    else if (escogerFlor === "gerbera") {
+    else if (florEscogida === "gerbera") {
         gerbera.decirPrecio();
-        break;
     }
     else {
         alert("Esa flor no la tenemos, escoge otra.");
-        escogerFlor = prompt("¿Qué otra flor te gustaría escoger?").toLowerCase();
+    }
+};
+
+
+let botonCalcular = document.getElementById("calcular");
+botonCalcular.addEventListener("click", calcularPrecio)
+
+function calcularPrecio() {
+    let florFinal = document.getElementById('florFinal').value.toLowerCase();
+
+    let cantidad = document.getElementById('cantidad').value;
+    while (cantidad == null || /\D/.test(cantidad) || cantidad == "") {
+        cantidad = prompt("Ingrese una cantidad válida: ");
+    };
+
+    let envio = '';
+    if (document.getElementById('envio_si').checked) {
+        envio = 90;
+    } else if (document.getElementById('envio_no').checked) {
+        envio = 0;
+    }
+
+    let florero = '';
+    if (document.getElementById('florero_si').checked) {
+        florero = 120;
+    } else if (document.getElementById('florero_no').checked) {
+        florero = 0;
+    }
+    
+    if (florFinal === "rosa"){
+        let precioFinal = document.getElementById('precioFinal');
+        precioFinal.innerHTML = `<p>Su total es de $${(parseInt(cantidad) * rosa.precio) + florero + envio}.</p>`;
+    }
+    else if (florFinal === "peonia"){
+        let precioFinal = document.getElementById('precioFinal');
+        precioFinal.innerHTML = `<p>Su total es de $${(parseInt(cantidad) * peonia.precio) + florero + envio}.</p>`;    
+    }
+    else if (florFinal === "gerbera"){
+        let precioFinal = document.getElementById('precioFinal');
+        precioFinal.innerHTML = `<p>Su total es de $${(parseInt(cantidad) * gerbera.precio) + florero + envio}.</p>`;    
+    }
+    else if (florFinal === "tulipan"){
+        let precioFinal = document.getElementById('precioFinal');
+        precioFinal.innerHTML = `<p>Su total es de $${(parseInt(cantidad) * tulipan.precio) + florero + envio}.</p>`;    
     }
 }
 
-let cantidad = prompt("¿Cuantas flores te gustaría agregar?");
-
-while (cantidad == null || /\D/.test(cantidad) || cantidad == "") {
-    cantidad = prompt("Ingrese una cantidad válida: ");
-};
-
-let wrapping = confirm("Desea agregar florero? (+$120). Escoge 'ok' si sí, y 'cancelar' si no.")
-let envio = confirm ("¿Agregar envío? (+$90). Escoge 'ok' si sí, y 'cancelar' si no.")
-
-if (wrapping === true) {
-    wrapping = 120;
+function guardarDatos() {
+    localStorage.nombre = document.getElementById("nombre").value;
+    localStorage.destinatario = document.getElementById("destinatario").value;
 }
 
-if (envio === true) {
-    envio = 90;
-}
-
-
-if (escogerFlor = "rosa"){
-    alert(("Su total es de $") + ((parseInt(cantidad) * rosa.precio) + wrapping + envio));
-}
-else if (escogerFlor = "peonia"){
-    alert(("Su total es de $") + ((parseInt(cantidad) * peonia.precio) + wrapping + envio));
-}
-else if (escogerFlor = "gerbera"){
-    alert(("Su total es de $") + ((parseInt(cantidad) * gerbera.precio) + wrapping + envio));
-}
-else if (escogerFlor = "tulipan"){
-    alert(("Su total es de $") + ((parseInt(cantidad) * tulipan.precio) + wrapping + envio));
+function recuperarDatos() {
+    if ((localStorage.nombre != undefined) && (localStorage.destinatario != undefined)) {
+        document.getElementById("datos").innerHTML = "De: " + localStorage.nombre + "        Para: " + localStorage.destinatario;
+    } else {
+        document.getElementById("datos").innerHTML = "No has introducido nombre y/o destinatario";
+    }
 }
