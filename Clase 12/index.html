@@ -5,13 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script defer src="index.js"></script>
     </head>
     <body>
         <h1 class="title">DOM</h1>
         <h3>Andrea Zapata</h3>
         <div id="escogerFlor">
             <p>Escoge una flor para verificar el precio.</p>
-            <input type="text" id="flor" placeholder="Escoge una flor." onkeypress="validar(event)">
+            <input type="text" id="flor" placeholder="Escoge una flor.">
             <br>
             <button id="listo">Indicar precio</button>
             <div id="indicarPrecio"></div>
@@ -38,7 +40,7 @@
             <input type="radio" name= "florero" id="florero_no" value="florero_no">
             <label for="florero_no">No</label>
             <br>
-            <button id="calcular">Listo</button>
+            <button id="calcular">Calcular precio</button>
             <div id="precioFinal"></div>
         </div>
 
@@ -50,10 +52,8 @@
             <input type="text" id="destinatario" />
             <input type="button" id="guardarDatos" value="Guardar datos" />
             <p id="datos">Pulsa para confirmar los datos.</p>
-            <input type="button" id="confirmarDatos" value="Confirmar datos" />
+            <input type="button" id= "confirmarDatos" value="Confirmar datos" />
         </div>
 
-        <script src="index.js"></script>
-        
     </body>
 </html>

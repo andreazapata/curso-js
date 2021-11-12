@@ -88,10 +88,16 @@ function calcularPrecio() {
     }
 }
 
+let gd = document.getElementById("guardarDatos");
+gd.addEventListener("click", guardarDatos);
+
 function guardarDatos() {
     localStorage.nombre = document.getElementById("nombre").value;
     localStorage.destinatario = document.getElementById("destinatario").value;
 }
+
+let cd = document.getElementById("confirmarDatos");
+cd.addEventListener("click", recuperarDatos);
 
 function recuperarDatos() {
     if ((localStorage.nombre != undefined) && (localStorage.destinatario != undefined)) {
