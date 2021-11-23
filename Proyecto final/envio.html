@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="img/icon_logo.png" type="image/png">
+    <script src="https://kit.fontawesome.com/6e092e267b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script defer src="index.js"></script>
+    <title>Mon Amour Flower Shop
+
+    </title>
+</head>
+
+<body>
+
+    <nav class="nav-bar">
+        <div class="container row align-items-center">
+            <div class="col nav-logo">
+                <img src="img/full_logo.png" alt="logo" class="">
+            </div>
+            <div class="col nav-carrito">
+                <a href="#" class=""><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Diseña tu arreglo</h1>
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Arreglo</a></li>
+                <li><a href="datos.html">Datos</a></li>
+                <li>Envío</li>
+            </ul>
+            <div class="menu-dropdown">
+                <div class="label-dropdown">
+                    <label for="remitente">Fecha</label>
+                </div>
+                <div class="select-dropdown">
+                    <input type="text" id="fecha" placeholder="Escribe la fecha de envío.">
+                </div>
+            </div>
+            <div class="menu-dropdown">
+                <div class="label-dropdown">
+                    <label for="hora">Hora</label>
+                </div>
+                <div class="select-dropdown">
+                    <select id="hora">
+                        <option value="">- Seleccionar -</option>
+                        <option value="manana">Mañana (9 am - 12 pm)</option>
+                        <option value="mediodia">Medio día (12 pm - 3 pm)</option>
+                        <option value="tarde">Tarde (3 pm - 6 pm)</option>
+                    </select>               
+                 </div>
+            </div>
+            <div class="menu-dropdown">
+                <div class="label-dropdown">
+                    <label for="mensaje">Dirección</label>
+                </div>
+                <div class="select-dropdown">
+                    <input type="text" id="direccion" placeholder="Calle #123 Colonia CP.">
+                </div>
+            </div>
+            <div class="center">
+                <button id="agregar" class="btn-primario">Agregar</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="contenedor-modal" id="contenedor-modal">
+        <div class="modal-datos">
+            <h1>Información</h1>
+            <h4>Arreglo</h4>
+            <div id="informacionArreglo"></div>
+            <h4>Datos</h4>
+            <div id="informacionDatos"></div>
+            <h4>Envío</h4>
+            <div id="informacionEnvio"></div>
+            <button id="regresar" class="btn-primario">Regresar</button>
+            <button id="confirmar" class="btn-secundario">Confirmar</button>
+        </div>
+    </div>
+
+</body>
+</html>
